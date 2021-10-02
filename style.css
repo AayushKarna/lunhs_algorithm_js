@@ -52,6 +52,7 @@ body {
     0 -0.4rem 4.8rem rgba(0, 0, 0, 0.07);
 
   border-radius: 11px;
+  margin-bottom: 5rem;
 }
 
 .heading-secondary {
@@ -118,6 +119,12 @@ body {
   color: #45260a;
 }
 
+footer {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #555;
+}
+
 #popupdiv {
   padding-top: 2.4rem;
   padding-bottom: 1.6rem !important;
@@ -135,7 +142,7 @@ body {
 
 #btn-yes {
   font-family: sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 #btn-no {
