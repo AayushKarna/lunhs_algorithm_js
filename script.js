@@ -119,7 +119,11 @@ validateBtn.addEventListener('click', function (e) {
       Qual.success(`${cardType} card is valid.`, '');
       hideLoader();
     } else {
-      alert(`${cardType} is invalid.`);
+      if (cardType === 'Unknown card') {
+        Qual.error(`Card number is invalid.`, '');
+      } else {
+        Qual.error(`${cardType} is invalid.`, '');
+      }
       hideLoader();
     }
   } else {
