@@ -1,24 +1,7 @@
-/*
-If you don't want to use fancy popup or loader, you can use code from logic.js instead, but make sure you remove loader from the DOM as well.
-*/
+// this is just logic, no fancy loader or alert, you can impplement your own alert and loader
 
-const overlay = document.getElementById('loader-overlay');
-const preLoader = document.getElementById('preloader');
-const loader = document.getElementById('loader');
 const cardInput = document.getElementById('card');
 const validateBtn = document.getElementById('validate');
-
-const showLoader = function () {
-  loader.classList.remove('hidden-el');
-  preLoader.classList.remove('hidden-el');
-  overlay.classList.remove('hidden-el');
-};
-
-const hideLoader = function () {
-  loader.classList.add('hidden-el');
-  preLoader.classList.add('hidden-el');
-  overlay.classList.add('hidden-el');
-};
 
 const fineInput = function (input) {
   const trimedInput = input.trim();
@@ -106,7 +89,6 @@ const validateChecksum = function (num) {
 
 validateBtn.addEventListener('click', function (e) {
   e.preventDefault();
-  showLoader();
 
   const input = cardInput.value;
   const validation = validateInput(input);
@@ -116,16 +98,11 @@ validateBtn.addEventListener('click', function (e) {
     const isValid = validateChecksum(fineInput(input));
 
     if (isValid) {
-      Qual.success(`${cardType} card is valid.`, '');
-      hideLoader();
+      alert(`${cardType} card is valid.`);
     } else {
       alert(`${cardType} is invalid.`);
-      hideLoader();
     }
   } else {
-    Qual.error(validation.message, '');
-    hideLoader();
+    alert(validation.message);
   }
 });
-
-document.addEventListener('DOMContentLoaded', hideLoader);
