@@ -43,7 +43,7 @@ const validateInput = function (rawInput) {
 
   if (/[^0-9-\s]+/.test(rawInput)) {
     return {
-      isValid: false,
+      valid: false,
       message: 'Only space, dash and digits are allowed'
     };
   }
